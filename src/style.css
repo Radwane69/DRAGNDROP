@@ -1,35 +1,35 @@
 body {
-    background: teal;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  background-color: #0f0c69;
 }
 
-.base {
-    background-image: url(../img/imgCarréBleu.jpg);
-    position: relative;
-    height: 150px;
-    width: 150px;
-    top: 5px;
-    left: 5px;
-    cursor: pointer;
+.container {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
 }
 
-.tenu {
-    border: solid 5px #ccc;
+.draggable1 {
+  border: 20px solid #ceff00;
+  margin: 30px;
+  padding: 30px;
+  text-align: center;
+  color: #ceff00;
+  font-size: 2rem;
 }
 
-.case {
-    display: inline-block;
-    height: 160px;
-    width: 160px;
-    margin: 10px;
-    border: solid 5px black;
-    background: white;
+.draggable2 {
+  border: 20px solid #ceff00;
+  margin: 30px;
+  padding: 30px;
+  text-align: center;
+  color: #ceff00;
+  font-size: 2rem;
 }
 
-.hovered {
-    background: #f4f4f4;
-    border-style: dashed;
+.draggable3 {
+  border: 20px solid #ceff00;
+  margin: 30px;
+  padding: 30px;
+  text-align: center;
+  color: #ceff00;
+  font-size: 2rem;
 }

@@ -1,42 +1,15 @@
-const base = document.querySelector('.base');
-const box = document.querySelectorAll('.case');
-
-base.addEventListener('dragstart', dragstart);
-base.addEventListener('dragend', dragend);
-
-function dragstart() {
-    this.className += 'tenu';
-    setTimeout(() => (this.className = 'invisible'), 0);
+function start(e) {
+  e.dataTransfer.effectAllowed = "move";
+  e.dataTransfer.setData("text", e.target.getAttribute("id"));
 }
-
-function dragend() {
-    this.className = 'base';
+function over(e) {
+  e.currentTarget.className="class2";
+  return false;
 }
-
-for (const vide of box) {
-    vide.addEventListener('dragover', dragOver);
-
-    vide.addEventListener('dragenter', dragEnter);
-
-    vide.addEventListener('dragleave', dragLeave);
-
-    vide.addEventListener('drop', dragDrop);
-}
-
-function dragOver(e) {
-    e.preventDefault()
-
-}
-
-function dragEnter(e) {
-    e.preventDefault();
-    this.className = 'case'
-}
-
-function dragLeave() {
-    console.log("leave");
-}
-
-function dragDrop() {
-    console.log("dropped");
+function drop(e) {
+  ob = e.dataTransfer.getData("text");
+  e.currentTarget.appendChild(document.getElementById(ob));
+  e.currentTarget.className="class1";
+  e.stopPropagation();
+  return false;
 }
